@@ -1,0 +1,54 @@
+{
+  "name": "genpark-personal-agent-zone2-lactate-shuttle-cardio-endurance-skill",
+  "version": "1.0.0",
+  "title": "Zone 2 Lactate Shuttle & Mitochondrial MCT1/4 Capacity Skill",
+  "description": "Mitochondrial lactate shuttle transport MCT1/MCT4 capacity, fat max oxidation pace calculation, and aerobic endurance base builder. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "personal-agent",
+  "topics": [
+    "lactate-shuttle",
+    "mct1-transporter",
+    "mitochondria",
+    "zone2-cardio",
+    "fat-oxidation",
+    "personal-agent",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "estimate_fat_max_pace",
+      "description": "Estimate peak fat oxidation pace and blood lactate clearing capacity from threshold tests.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "threshold_pace_min_per_km": {
+            "type": "number"
+          },
+          "aerobic_base_weekly_km": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "threshold_pace_min_per_km"
+        ]
+      }
+    },
+    {
+      "name": "generate_mct_shuttle_session",
+      "description": "Synthesize over-under lactate clearance micro-intervals (Zone 2 baseline with 30s Zone 4 surges).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "session_minutes": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "session_minutes"
+        ]
+      }
+    }
+  ]
+}
